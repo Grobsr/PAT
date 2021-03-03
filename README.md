@@ -8,3 +8,4 @@ main分支主要包含如下目录，目录中的链接指向相应的题解。�
 |  A   | 1001 | A+B Format | [C++](https://www.grobsr.com/some-pat-a1001/) |
 |  A   | 1002 | A+B for Polynomials | [C++](https://www.grobsr.com/some-pat-a1002/) |
 |  A   | 1003 | Emergency | [C++](https://www.grobsr.com/some-pat-a1003/) |
+|  A   | 1004 | Counting Leaves | [C++](https://www.grobsr.com/some-pat-a1004/) |
