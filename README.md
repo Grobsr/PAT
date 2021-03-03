@@ -10,3 +10,4 @@ main分支主要包含如下目录，目录中的链接指向相应的题解。�
 |  A   | 1003 | Emergency | [C++](https://www.grobsr.com/some-pat-a1003/) |
 |  A   | 1004 | Counting Leaves | [C++](https://www.grobsr.com/some-pat-a1004/) |
 |  A   | 1005 | Spell It Right | [C++](https://www.grobsr.com/some-pat-a1005/) |
+|  A   | 1006 | A1006 Sign In and Sign Out | [C++](https://www.grobsr.com/some-pat-a1006/) |
