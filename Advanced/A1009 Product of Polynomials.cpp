@@ -6,7 +6,6 @@ using namespace std;
 const int POLY_MAX_N = 1010;
 const int RES_MAX_N = 2020;
 
-
 int main() {
     int numOfA, numOfB, exponent;
     double coefficient;
