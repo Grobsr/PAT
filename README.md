@@ -15,3 +15,4 @@ main分支主要包含如下目录，目录中的链接指向相应的题解。�
 |  A   | 1008 | Elevator | [C++](https://www.grobsr.com/some-pat-a1008/) |
 |  A   | 1009 | Product of Polynomials | [C++](https://www.grobsr.com/some-pat-a1009/) 
 |  A   | 1011 | World Cup Betting | [C++](https://www.grobsr.com/some-pat-a1011/) 
+|  A   | 1012 | The Best Rank | [C++](https://www.grobsr.com/some-pat-a1012/) 
