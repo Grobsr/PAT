@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int MAX_N = 10010;
+const int MAX_N = 10010;//最大数字个数
 
 int main() {
     int num;
