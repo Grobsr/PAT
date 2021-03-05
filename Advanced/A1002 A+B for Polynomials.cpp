@@ -1,11 +1,12 @@
 #include <iostream>
 #include <stack>
- 
+
 using namespace std;
- 
+
+const int MAX_N = 1010;//最大项数
+
 int main(){
-    const int maxNum = 1010;
-    double result[maxNum] = {0.0};
+    double result[MAX_N] = {0.0};
     int numOfA, numOfB, exponent;
     double coefficient;
     cin >> numOfA;
@@ -22,7 +23,7 @@ int main(){
     }
     stack<int> out;
     //遍历结果多项式，让系数不为零的项下标（指数）入栈
-    for (int i = 0; i < maxNum; ++i) {
+    for (int i = 0; i < MAX_N; ++i) {
         if (result[i] != 0.0){
             out.push(i);
         }
