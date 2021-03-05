@@ -3,8 +3,8 @@
 
 using namespace std;
 
-const int POLY_MAX_N = 1010;
-const int RES_MAX_N = 2020;
+const int POLY_MAX_N = 1010;//用于计算的多项式最大项数
+const int RES_MAX_N = 2020;//结果多项式最大项数
 
 int main() {
     int numOfA, numOfB, exponent;
