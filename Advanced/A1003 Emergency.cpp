@@ -1,16 +1,16 @@
 #include <iostream>
 #include <cstring>
 #include <algorithm>
- 
+
 using namespace std;
- 
+
 const int MAX_V = 510;//最大顶点数
 const int INF = 0x3fffffff;//无穷大
- 
+
 int numOfV, numOfE, start, finish, graph[MAX_V][MAX_V], teams[MAX_V];
 int shortest[MAX_V], allTeams[MAX_V], numOfShortest[MAX_V];
 bool visited[MAX_V] = {false};
- 
+
 void Dijkstra(int start) {
     fill(shortest, shortest + MAX_V, INF);
     memset(allTeams, 0, sizeof(allTeams));
@@ -49,7 +49,7 @@ void Dijkstra(int start) {
         }
     }
 }
- 
+
 int main() {
     //读入顶点数、边数、起点、终点
     cin >> numOfV >> numOfE >> start >> finish;
@@ -57,12 +57,12 @@ int main() {
         cin >> teams[i];
     }
     fill(graph[0], graph[0] + MAX_V * MAX_V, INF);//起始时图中任意两顶点之间不可达
-    int u, v;
+    int from, to;
     //读入图的信息
     for (int i = 0; i < numOfE; ++i) {
-        cin >> u >> v;
-        cin >> graph[u][v];
-        graph[v][u] = graph[u][v];
+        cin >> from >> to;
+        cin >> graph[from][to];
+        graph[to][from] = graph[from][to];
     }
     Dijkstra(start);//调用Dijkstra()函数
     cout << numOfShortest[finish] << " " << allTeams[finish];
