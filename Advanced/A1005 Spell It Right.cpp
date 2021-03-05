@@ -2,10 +2,10 @@
 
 using namespace std;
 
+//定义数字常量数组
+const string digits[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
 int main(){
-    //定义常量数组
-    const string digits[10] = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
     string input;
     cin >> input;
     int sum = 0;
