@@ -7,7 +7,7 @@ using namespace std;
 const int MAX_V = 510;//最大顶点数
 const int INF = 0x3fffffff;//无穷大
 
-int numOfV, numOfE, start, finish, Graph[MAX_V][MAX_V], teams[MAX_V];
+int numOfV, numOfE, start, finish, graph[MAX_V][MAX_V], teams[MAX_V];
 int shortest[MAX_V], allTeams[MAX_V], numOfShortest[MAX_V];
 bool vis[MAX_V] = {false};
 
@@ -23,7 +23,7 @@ void Dijkstra(int start) {
     for (int i = 0; i < numOfV; ++i) {
         current = -1, min = INF;
         for (int v = 0; v < numOfV; ++v) {
-            if (!vis[v] && shortest[v] < min) { 
+            if (!vis[v] && shortest[v] < min) {
                 current = v;
                 min = shortest[v];//更新最小距离
             }
@@ -34,12 +34,12 @@ void Dijkstra(int start) {
         }
         vis[current] = true;
         for (int v = 0; v < numOfV; ++v) {
-            if (!vis[v] && Graph[current][v] != INF) {
-                if (shortest[current] + Graph[current][v] < shortest[v]) {
-                    shortest[v] = shortest[current] + Graph[current][v];//更新最短路径
+            if (!vis[v] && graph[current][v] != INF) {
+                if (shortest[current] + graph[current][v] < shortest[v]) {
+                    shortest[v] = shortest[current] + graph[current][v];//更新最短路径
                     allTeams[v] = allTeams[current] + teams[v];//更新可召集的队伍数
                     numOfShortest[v] = numOfShortest[current];//继承最短路径数
-                } else if (shortest[current] + Graph[current][v] == shortest[v]) {
+                } else if (shortest[current] + graph[current][v] == shortest[v]) {
                     numOfShortest[v] += numOfShortest[current];//增加最短路径数
                     if (allTeams[current] + teams[v] > allTeams[v]) {
                         allTeams[v] = allTeams[current] + teams[v];//更新能够召集队伍数
@@ -51,18 +51,18 @@ void Dijkstra(int start) {
 }
 
 int main() {
-	//读入顶点数、边数、起点、终点
+    //读入顶点数、边数、起点、终点
     cin >> numOfV >> numOfE >> start >> finish;
     for (int i = 0; i < numOfV; ++i) {
         cin >> teams[i];
     }
-    fill(Graph[0], Graph[0] + MAX_V * MAX_V, INF);//起始时图中任意两顶点之间不可达
+    fill(graph[0], graph[0] + MAX_V * MAX_V, INF);//起始时图中任意两顶点之间不可达
     int u, v;
     //读入图的信息
     for (int i = 0; i < numOfE; ++i) {
         cin >> u >> v;
-        cin >> Graph[u][v];
-        Graph[v][u] = Graph[u][v];
+        cin >> graph[u][v];
+        graph[v][u] = graph[u][v];
     }
     Dijkstra(start);//调用Dijkstra()函数
     cout << numOfShortest[finish] << " " << allTeams[finish];
